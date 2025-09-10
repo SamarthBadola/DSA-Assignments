@@ -1,5 +1,4 @@
 #include<iostream>
-#include<cstring>
 #define MAX 100
 using namespace std;
 class Stack{
@@ -26,11 +25,12 @@ int main(){
     char str[MAX];
     cout<<"Enter a string: ";
     cin.getline(str,MAX);
-    int len=strlen(str);
+    int len=0;
+    while(str[len]!='\0') len++;
     Stack st;
     for(int i=0;i<len;i++) st.push(str[i]);
     cout<<"Reversed string: ";
     while(!st.isEmpty()) cout<<st.pop();
-    cout<<"\n";
+    cout<<endl;
     return 0;
 }
